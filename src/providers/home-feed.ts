@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import { AngularFire } from 'angularfire2';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Injectable()
 export class HomeFeed {
   showData: any;
   homeData: any
-  constructor(private af: AngularFire) {}
+  constructor(private af: AngularFireDatabase) {}
 
   populateHomepage(){
-      return this.af.database.list('')
+    console.log(this.af.list('/'));
+      return this.af.list('/')
   }
 
 }

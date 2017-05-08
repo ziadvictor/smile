@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { PlaylistFeed } from '../../providers/playlist-feed';
-import { YoutubeVideoPlayer } from 'ionic-native';
+//import { YoutubeVideoPlayer } from 'ionic-native';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 
 @Component({
   selector: 'page-basheer-single',
@@ -17,7 +18,8 @@ export class BasheerSinglePage{
   playlistId: string = '';
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private playlistService: PlaylistFeed){}
+              private playlistService: PlaylistFeed,
+              private youtube: YoutubeVideoPlayer){}
 
   // ionViewDidLoad() {
   //   console.log('ionViewDidLoad BasheerSinglePage');
@@ -38,7 +40,8 @@ export class BasheerSinglePage{
   }
 
   playVideo(){
-    YoutubeVideoPlayer.openVideo(this.videoLink);
+    //YoutubeVideoPlayer.openVideo(this.videoLink);
+    this.youtube.openVideo(this.videoLink);
   }
 
   goHome(){
