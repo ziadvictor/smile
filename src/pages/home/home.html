@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Smile
+    </ion-title>
+    <button ion-button right menuToggle class="hamburger">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page" *ngIf="!isLoading; else loading">
+  <button ion-item *ngFor="let homeFeed of homeFeeds | homeFilter: filter; let i=index" (click)="loadPlaylist(i)">
+    <img [src]="homeFeed.listImage"/>
+  </button>
+</ion-content>
+
+<ng-template #loading>Loading...</ng-template>

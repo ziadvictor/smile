@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons>
+      <button ion-button clear type="button" (click)="goHome()">
+        <!--<ion-icon name="home" class="home-icon"></ion-icon>-->
+      </button>
+    </ion-buttons>
+    <ion-title>{{listName}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <button ion-item *ngFor="let feed of feeds; let i = index" (click)="navigateToSingleVideo(i)">
+      <div *ngIf="filterVideoTitle(feed.snippet.title)">
+          <ion-thumbnail item-right>
+            <img src="{{feed?.snippet?.thumbnails?.medium?.url}}">
+          </ion-thumbnail>
+          <h2>{{feed?.snippet?.title}}</h2>
+          <p>{{feed?.snippet?.publishedAt | date:'yyyy/MM/dd'}}</p>
+      </div>
+    </button>
+
+    <button *ngIf="nextPage" ion-button (click)="loadMore()">Load more</button>
+
+</ion-content>

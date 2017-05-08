@@ -1,0 +1,30 @@
+<ion-menu side="right" [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>الأقسام</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="triggerFilter('')" class="main-menu-item">
+        جميع القنوات
+        <ion-icon name="videocam"></ion-icon>
+      </button>
+      <button ion-item (click)="triggerFilter('cooking')" class="main-menu-item">
+        قنوات الطبخ
+        <ion-icon name="bonfire"></ion-icon>
+      </button>
+      <button ion-item (click)="triggerFilter('makeup')" class="main-menu-item">
+        مكياج
+        <ion-icon name="brush"></ion-icon>
+      </button>
+      <button ion-item (click)="triggerFilter('verity')" class="main-menu-item">
+        منوعات
+        <ion-icon name="happy"></ion-icon>
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>

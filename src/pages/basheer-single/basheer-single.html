@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons>
+      <button ion-button clear type="button" (click)="goHome()">
+        <!--<ion-icon name="home" class="home-icon"></ion-icon>-->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="video-image-wrapper" (click)="playVideo()">
+    <img *ngIf="imageLink" [src]="imageLink" [alt]="title" class="video-image" />
+    <ion-icon name="md-arrow-dropright-circle"></ion-icon>
+  </div>
+  <div class="video-info-wrapper">
+    <h4 class="video-title">{{title}}</h4>
+    <p class="video-description">{{description}}</p>
+  </div>
+</ion-content>

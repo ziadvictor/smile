@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{showName}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <img [src]="featureImage" [alt]="showName">
+
+  <button ion-item *ngFor="let list of listsFeed; let i = index" (click)="navigateToPlaylist(list.id, list.snippet.title)">
+    <div class="list-info" *ngIf="list.contentDetails.itemCount!==0">
+      <img src="{{list?.snippet?.thumbnails?.medium?.url}}"/>
+      <h2 col-50>{{list?.snippet?.title}}</h2>
+    </div>
+  </button>
+
+</ion-content>
