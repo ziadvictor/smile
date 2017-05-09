@@ -8,7 +8,6 @@ export class HomeFeed {
   constructor(private af: AngularFireDatabase) {}
 
   populateHomepage(){
-    console.log(this.af.list('/'));
       return this.af.list('/')
   }
 

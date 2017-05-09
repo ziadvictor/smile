@@ -27,6 +27,11 @@ export class HomePage {
       });
     }
 
+    // reset filter
+    ionViewDidEnter() {
+        this.filter = '';
+    }
+
     ionViewDidLoad() {
       this.homeFeedService.populateHomepage()
         .subscribe(
